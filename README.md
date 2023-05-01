@@ -49,4 +49,3 @@
     <p style="color: #3eaf7c;font-size:18px">uni-simple-router@2.0+ts+uni-app</p>
     <img src="https://hhyang.cn/images/ad1.jpg" width="200" height="200">
 </div>
-# uni-simple-router-vue3

@@ -24,7 +24,7 @@ export function uniOriginJump(
                 resetAndCallPageHook(router, originRule.url) // 还原及执行app.vue及首页下已经重写后的生命周期
                 // 【Fixe】  https://github.com/SilurianYang/uni-simple-router/issues/254
                 // 在小程序端  next 直接放行会执行这个
-                router.app.config.globalProperties.$AppReady = true;
+                router.Vue.prototype.$AppReady = true;
             }
         }
         complete && complete.apply(null, {msg: 'forceGuardEach强制触发并且不执行跳转'});
@@ -54,7 +54,7 @@ export function uniOriginJump(
                         }
                         // 【Fixe】  https://github.com/SilurianYang/uni-simple-router/issues/254
                         // 在小程序端 第一次 next 做跳转  会触发这个 、在app端首次必定会触发这个
-                        router.app.config.globalProperties.$AppReady = true;
+                        router.Vue.prototype.$AppReady = true;
 
                         if (platform === 'app-plus') {
                             const waitPage = plus.nativeObj.View.getViewById('router-loadding');
